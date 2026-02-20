@@ -1,33 +1,75 @@
-# Pomodoro Timer
+Shopping List App
 
-A simple Pomodoro timer made with HTML, CSS, and JavaScript.  
-The user can choose Focus minutes and Break minutes. The timer counts down and switches between Focus and Break automatically.
+A simple Shopping List app made with HTML, CSS, and JavaScript.
+The user can add items, delete items, and the list is saved automatically using Local Storage.
 
-## Features
-- Focus and Break modes
-- User chooses minutes for Focus and Break
-- Start / Pause / Reset buttons
-- Automatic switch: Focus → Break → Focus
-- Optional sound when time ends (using an `<audio>` element)
+Features
 
-## How to Run
-1. Download or clone this project.
-2. Open `index.html` in your browser.
-3. (If you use sound) Make sure your `alarm.mp3` file is in the same folder and the HTML has:
-   `<audio id="alarmSound" src="alarm.mp3"></audio>`
+Add new shopping items
 
-## How It Works (Simple)
-- The app stores time in **seconds** for easier countdown logic.
-- Every second, `tick()` runs using `setInterval`.
-- When time ends, the mode switches and the timer loads the next time.
+Delete individual items
 
-## Tech Used
-- HTML
-- CSS
-- JavaScript (Vanilla)
+Mark items as completed
 
-## Possible Improvements
-- Show text on screen: “FOCUS” / “BREAK”
-- Change colors based on mode
-- Add long break after 4 pomodoros
-- Save settings with LocalStorage
+Data saved in browser using Local Storage
+
+List remains after page refresh
+
+How to Run
+
+Download or clone this project.
+
+Open index.html in your browser.
+
+Start adding items to your shopping list!
+
+No installation or extra setup required.
+
+How It Works (Simple)
+
+When the user adds an item, JavaScript creates a new list element (<li>).
+
+Items are stored in an array.
+
+The array is converted to JSON and saved in Local Storage using:
+
+localStorage.setItem("shoppingList", JSON.stringify(items));
+
+When the page loads, the app:
+
+Gets saved data from Local Storage
+
+Converts it back to an array using JSON.parse()
+
+Displays saved items automatically
+
+When an item is deleted or marked complete, Local Storage updates instantly.
+
+Tech Used
+
+HTML
+
+CSS
+
+JavaScript (Vanilla JS)
+
+Local Storage API
+
+Project Structure
+shopping-list/
+│── index.html
+│── style.css
+│── script.js
+Possible Improvements
+
+Add edit item feature
+
+Add item categories (e.g., Fruits, Vegetables, Dairy)
+
+Add quantity input
+
+Add “Clear All” button
+
+Add dark mode
+
+Sync with database instead of Local Storage
